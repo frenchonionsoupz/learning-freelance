@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "Kobe or Cubicle"
+subtitle: "Why “Find Your Passion” Is Potentially Harmful Advice"
+description: "Why “Find Your Passion” Is Potentially Harmful Advice"
+image: /assets/images/kobe-or-cubicle.jpg
 date: 2025-12-08 09:00:00 -0500
 ---
 

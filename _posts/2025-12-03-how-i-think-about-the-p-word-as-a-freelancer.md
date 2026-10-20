@@ -1,6 +1,9 @@
 ---
 layout: post
-title: "How I Think About the P-Word as a Freelancer"
+title: "How To Develop Your Craft (Without “The Grind”)"
+subtitle: "The stupid-simple way to become an expert at something valuable"
+description: "The stupid-simple way to become an expert at something valuable"
+image: /assets/images/practice.jpg
 date: 2025-12-03 09:00:00 -0500
 ---
 

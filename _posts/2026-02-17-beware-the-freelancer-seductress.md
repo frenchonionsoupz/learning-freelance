@@ -1,6 +1,9 @@
 ---
 layout: post
-title: "Beware the Freelancer Seductress"
+title: "The Internet’s Real Value for Freelancers Is Connection, Not Automation"
+subtitle: "Why the internet seduces us toward scale and automation"
+description: "Why the internet seduces us toward scale and automation"
+image: /assets/images/seductress.jpg
 date: 2026-02-17 09:00:00 -0500
 ---
 
