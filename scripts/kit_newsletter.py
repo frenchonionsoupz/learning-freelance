@@ -1,4 +1,4 @@
-"""Create DRAFT Kit broadcasts for newly added opted-in Jekyll posts. Never send."""
+"""Schedule Kit broadcasts for NEW opted-in Jekyll posts only."""
 import datetime as dt
 import html
 import json
@@ -69,7 +69,7 @@ def main():
             "content": body_html,
             "description": f"GitHub draft: {filename}",
             "public": False,
-            "send_at": None
+            "send_at": (dt.datetime.now(dt.timezone.utc) + dt.timedelta(minutes=10)).isoformat(timespec="seconds")
         }
         request = urllib.request.Request(API, data=json.dumps(payload).encode(), headers={
             "Content-Type": "application/json",
@@ -81,7 +81,7 @@ def main():
         except urllib.error.HTTPError as exc:
             print("Kit returned HTTP", exc.code, exc.read().decode()[:1200], file=sys.stderr)
             raise
-        print(f"Created Kit draft {result.get('broadcast', {}).get('id')}. No email sent.")
+        print(f"Scheduled Kit broadcast {result.get('broadcast', {}).get('id')} for {payload['send_at']} UTC.")
 
 if __name__ == "__main__":
     main()
