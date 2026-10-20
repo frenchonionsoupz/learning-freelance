@@ -7,32 +7,18 @@ layout: default
 <section class="subscribe-box" aria-labelledby="subscribe-heading">
   <p class="subscribe-label" id="subscribe-heading">Get new posts by email</p>
   <p class="subscribe-copy">New writing, most days. That's it.</p>
-  <form class="subscribe" id="subscribeForm">
-    <input type="email" name="email" placeholder="Your email address" aria-label="Email address" autocomplete="email" required>
-    <button type="submit">Subscribe</button>
-  </form>
-  <p class="small" id="subscribeMessage">Email signup coming soon — not connected yet.</p>
+  <div class="kit-embed" id="kit-signup">
+    <script async data-uid="ab42a40fe0" src="https://learning-freelance.kit.com/ab42a40fe0/index.js"></script>
+  </div>
 </section>
 <section>
   <h2 class="section-title">Posts</h2>
   <ul class="post-list">
     {% for post in site.posts %}
-      <li>
-        <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <div class="post-summary">
-          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-          {% if post.subtitle %}<p class="post-subtitle">{{ post.subtitle | escape }}</p>{% endif %}
-        </div>
-      </li>
+      <li><span class="date">{{ post.date | date: "%b %-d, %Y" }}</span><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
     {% else %}
       <li>Your first post is coming soon.</li>
     {% endfor %}
   </ul>
 </section>
 <footer>© {{ site.time | date: "%Y" }} Learning Freelance · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></footer>
-<script>
-document.getElementById('subscribeForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  document.getElementById('subscribeMessage').textContent = 'Email signup is not connected yet.';
-});
-</script>
