@@ -1,6 +1,9 @@
 ---
 layout: post
-title: "How to KISS as a Freelancer"
+title: "My Stupid-Simple Freelance Framework"
+subtitle: "The three fundamentals I’d focus on before worrying about growth, scale, or automation."
+description: "The three fundamentals I’d focus on before worrying about growth, scale, or automation."
+image: /assets/images/how-to-kiss.jpg
 date: 2025-12-19 09:00:00 -0500
 ---
 
