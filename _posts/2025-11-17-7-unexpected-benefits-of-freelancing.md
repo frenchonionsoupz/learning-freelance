@@ -1,6 +1,9 @@
 ---
 layout: post
 title: "7 Unexpected Benefits of Freelancing"
+subtitle: "Why I’m motivated to make this a lifelong career"
+description: "Why I’m motivated to make this a lifelong career"
+image: /assets/images/7-unexpected.jpg
 date: 2025-11-17 09:00:00 -0500
 ---
 
