@@ -1,4 +1,4 @@
-name: Create Kit newsletter drafts
+name: Send Kit newsletters for new posts
 on:
   push:
     branches: [main]
@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install PyYAML Markdown
-      - name: Draft newsletters for new posts only
+      - name: Schedule newsletters for new opted-in posts
         env:
           KIT_API_KEY: ${{ secrets.KIT_API_KEY }}
           BEFORE_SHA: ${{ github.event.before }}
