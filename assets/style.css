@@ -9,8 +9,8 @@
       --accent-soft: #e7efe0;
       --link: #315b36;
       --link-hover: #244428;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Cabin", sans-serif;
+      --serif: "Cabin", sans-serif;
     }
 
     * { box-sizing: border-box; }
@@ -37,7 +37,7 @@
       text-decoration: none;
       color: var(--text);
       font: 700 clamp(28px, 6vw, 34px)/1 var(--sans);
-      letter-spacing: -0.06em;
+      letter-spacing: -0.035em;
       display: inline-block;
       margin-bottom: 28px;
     }
@@ -223,3 +223,9 @@
 .article-content blockquote { margin: 25px 0; padding: 2px 0 2px 18px; border-left: 3px solid var(--accent); }
 .article-content pre { overflow-x: auto; padding: 14px; background: #f1f1eb; font-size: 14px; }
 .article-content code { overflow-wrap: anywhere; }
+
+/* Post descriptions and cover images */
+.post-summary { min-width: 0; }
+.post-subtitle { margin: 3px 0 0; font: 15px/1.5 var(--sans); color: var(--muted); }
+.article-subtitle { font: 20px/1.5 var(--sans); color: var(--muted); margin: 0 0 12px; }
+.featured-image { display: block; width: 100%; height: auto; margin: 0 0 30px; border-radius: 4px; }
