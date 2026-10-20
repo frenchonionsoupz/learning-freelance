@@ -23,7 +23,7 @@ craft.
 I was really having fun with the guitar, but it clearly isn't the same
 for me as for the Jimi Hendrixes and Stevie Ray Vaughns of the world. I
 had about an hour and a half before my attention would drift, and I'd be
-ready to do something else.[1]
+ready to do something else.[^1]
 
 And this jealousy wasn't about the guitar specifically.
 
@@ -280,12 +280,4 @@ To me, that feels like a future that's better for all of us.
 So I'll leave with that hopeful thought.\
 ***Thanks for reading***!
 
-[1](#footnote-anchor-1){#footnote-1 .footnote-number
-contenteditable="false" target="_self"}
-
-In an interview, Marcus King describes his guitar obsession:
-
-> "I didn't have any friends. I was just kind of a loner kid... I spent
-> all my hours in the back room with my guitar...TV on, guitar in my
-> hands --- that's all I did."
-:::
+[^1]: In an interview, Marcus King describes his guitar obsession: “I didn't have any friends. I was just kind of a loner kid... I spent all my hours in the back room with my guitar... TV on, guitar in my hands — that's all I did.”
