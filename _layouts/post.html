@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<article>
+  <a class="back-link" href="{{ '/' | relative_url }}">← All posts</a>
+  <h1 class="article-title">{{ page.title | escape }}</h1>
+  <p class="article-date">{{ page.date | date: "%b %-d, %Y" }}</p>
+  <div class="article-content">{{ content }}</div>
+</article>
+<footer>© {{ site.time | date: "%Y" }} Learning Freelance · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></footer>

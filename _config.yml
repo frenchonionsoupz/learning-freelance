@@ -1,0 +1,8 @@
+title: Learning Freelance
+url: "https://learningfreelance.com"
+baseurl: ""
+permalink: /:title/
+markdown: kramdown
+timezone: America/New_York
+exclude:
+  - README.md

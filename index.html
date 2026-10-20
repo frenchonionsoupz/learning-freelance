@@ -1,276 +1,32 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#fcfbf7">
-  <title>Learning Freelance</title>
-  <meta name="description" content="A personal blog about freelancing, working for myself, and what I learn along the way.">
-  <style>
-    :root {
-      color-scheme: light;
-      --bg: #fcfbf7;
-      --text: #233129;
-      --muted: #6d776f;
-      --line: #e6e6df;
-      --accent: #6b8c56;
-      --accent-soft: #e7efe0;
-      --link: #315b36;
-      --link-hover: #244428;
-      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      --serif: Georgia, "Times New Roman", serif;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font: 18px/1.68 var(--serif);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .wrap {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    header {
-      padding: 34px 0 10px;
-    }
-
-    .brand {
-      text-decoration: none;
-      color: var(--text);
-      font: 700 clamp(28px, 6vw, 34px)/1 var(--sans);
-      letter-spacing: -0.06em;
-      display: inline-block;
-      margin-bottom: 28px;
-    }
-
-    .brand .accent { color: var(--accent); }
-    .brand .dot { color: var(--text); }
-
-    main {
-      padding-bottom: 90px;
-    }
-
-    .intro {
-      max-width: 620px;
-      margin-bottom: 34px;
-    }
-
-    p {
-      margin: 0 0 16px;
-    }
-
-    .intro p {
-      font-size: 21px;
-      line-height: 1.62;
-    }
-
-    a {
-      color: var(--link);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-
-    a:hover {
-      color: var(--link-hover);
-    }
-
-    .subscribe-box {
-      margin: 0 0 46px;
-      padding: 18px 18px 16px;
-      background: var(--accent-soft);
-      border: 1px solid #d7e1cf;
-      border-radius: 8px;
-    }
-
-    .subscribe-label {
-      font: 12px/1.3 var(--sans);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      font-weight: 700;
-      margin: 0 0 8px;
-    }
-
-    .subscribe-copy {
-      font-size: 17px;
-      margin-bottom: 12px;
-      color: #3d4a40;
-    }
-
-    .subscribe {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      margin: 0 0 8px;
-    }
-
-    input {
-      min-width: 0;
-      width: 280px;
-      padding: 12px 13px;
-      border: 1px solid #c3cec0;
-      border-radius: 4px;
-      background: #fff;
-      color: var(--text);
-      font: 15px var(--sans);
-    }
-
-    input:focus {
-      outline: 2px solid #d2e0c9;
-      outline-offset: 1px;
-      border-color: var(--accent);
-    }
-
-    button {
-      padding: 12px 16px;
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      background: var(--accent);
-      color: #fff;
-      font: 15px var(--sans);
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #5f7d4d;
-      border-color: #5f7d4d;
-    }
-
-    .small {
-      font: 13px/1.6 var(--sans);
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .section-title {
-      font: 12px/1.3 var(--sans);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--muted);
-      margin: 0 0 16px;
-    }
-
-    .post-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .post-list li {
-      display: flex;
-      gap: 22px;
-      padding: 14px 0;
-      align-items: baseline;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .date {
-      width: 108px;
-      flex: 0 0 108px;
-      color: var(--muted);
-      font: 13px var(--sans);
-      white-space: nowrap;
-    }
-
-    .post-link {
-      font-size: 18px;
-      text-decoration: none;
-      color: var(--text);
-    }
-
-    .post-link:hover {
-      color: var(--accent);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    footer {
-      padding-top: 20px;
-      margin-top: 42px;
-      font: 13px/1.6 var(--sans);
-      color: var(--muted);
-    }
-
-    footer a {
-      color: var(--muted);
-    }
-
-    @media (max-width: 560px) {
-      body { font-size: 17px; }
-      header { padding-top: 26px; }
-      .brand { margin-bottom: 24px; }
-      .intro p { font-size: 19px; }
-      .subscribe { flex-wrap: wrap; }
-      input { flex: 1 1 210px; width: 100%; }
-      .post-list li {
-        flex-direction: column;
-        gap: 6px;
-        align-items: flex-start;
-      }
-      .date {
-        width: auto;
-        flex: auto;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <a href="#" class="brand" aria-label="Learning Freelance home">learning<span class="accent">freelance</span><span class="dot">.</span></a>
-    </header>
-
-    <main>
-      <section class="intro">
-        <p>I'm Kyle. I write about freelancing, working for myself, and what I learn along the way.</p>
-      </section>
-
-      <section class="subscribe-box" aria-labelledby="subscribe-heading">
-        <p class="subscribe-label" id="subscribe-heading">Get new posts by email</p>
-        <p class="subscribe-copy">New writing, most days. That's it.</p>
-        <form class="subscribe" id="subscribeForm">
-          <input type="email" name="email" placeholder="Your email address" aria-label="Email address" autocomplete="email" required>
-          <button type="submit">Subscribe</button>
-        </form>
-        <p class="small" id="subscribeMessage">Preview only for now — connect this to your email tool before going live.</p>
-      </section>
-
-      <section>
-        <h2 class="section-title">Posts</h2>
-        <ul class="post-list">
-          <li><span class="date">Oct 20, 2026</span><a class="post-link" href="#" data-demo>Starting Learning Freelance</a></li>
-          <li><span class="date">Oct 18, 2026</span><a class="post-link" href="#" data-demo>What does it mean to work for yourself?</a></li>
-          <li><span class="date">Oct 15, 2026</span><a class="post-link" href="#" data-demo>Some things I'm figuring out</a></li>
-          <li><span class="date">Oct 12, 2026</span><a class="post-link" href="#" data-demo>Making a living from writing</a></li>
-        </ul>
-      </section>
-
-      <footer>
-        © 2026 Learning Freelance
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    document.getElementById('subscribeForm').addEventListener('submit', function (event) {
-      event.preventDefault();
-      document.getElementById('subscribeMessage').textContent = 'Preview only — the email list is not connected yet.';
-    });
-
-    document.querySelectorAll('[data-demo]').forEach(function (link) {
-      link.addEventListener('click', function (event) {
-        event.preventDefault();
-        alert('Example post — replace this with your real blog link.');
-      });
-    });
-  </script>
-</body>
-</html>
+---
+layout: default
+---
+<section class="intro">
+  <p>I'm Kyle. I write about freelancing, working for myself, and what I learn along the way.</p>
+</section>
+<section class="subscribe-box" aria-labelledby="subscribe-heading">
+  <p class="subscribe-label" id="subscribe-heading">Get new posts by email</p>
+  <p class="subscribe-copy">New writing, most days. That's it.</p>
+  <form class="subscribe" id="subscribeForm">
+    <input type="email" name="email" placeholder="Your email address" aria-label="Email address" autocomplete="email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <p class="small" id="subscribeMessage">Email signup coming soon — not connected yet.</p>
+</section>
+<section>
+  <h2 class="section-title">Posts</h2>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li><span class="date">{{ post.date | date: "%b %-d, %Y" }}</span><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+    {% else %}
+      <li>Your first post is coming soon.</li>
+    {% endfor %}
+  </ul>
+</section>
+<footer>© {{ site.time | date: "%Y" }} Learning Freelance · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></footer>
+<script>
+document.getElementById('subscribeForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  document.getElementById('subscribeMessage').textContent = 'Email signup is not connected yet.';
+});
+</script>
