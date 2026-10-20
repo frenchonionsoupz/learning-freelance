@@ -19,7 +19,7 @@ def git(*args):
     return subprocess.check_output(["git", *args], text=True).strip()
 
 def parse(path):
-    raw = Path(path).read_text(encoding="utf-8-sig")
+    raw = Path(path).read_text(encoding="utf-8-sig").lstrip()
     match = re.match(r"\A---\s*\n(.*?)\n---\s*\n(.*)\Z", raw, flags=re.S)
     if not match:
         raise ValueError(f"{path}: missing YAML front matter")
