@@ -64,7 +64,7 @@ def main():
         # Email clients do not reliably support HTML <details> dropdowns.
         # Keep them on the website, but replace each with a link in Kit emails.
         body = re.sub(
-            r"<details\\b[^>]*>.*?</details\\s*>",
+            r"<details\b[^>]*>.*?</details\s*>",
             f'<p><a href="{html.escape(link, quote=True)}">See the full prompt on Learning Freelance →</a></p>',
             body,
             flags=re.I | re.S,
