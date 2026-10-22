@@ -1,4 +1,4 @@
-"""Schedule Kit broadcasts for NEW opted-in Jekyll posts only."""
+"""Schedule Kit broadcasts for new Jekyll posts unless opted out."""
 import datetime as dt
 import html
 import json
@@ -41,15 +41,16 @@ def main():
     print(f"New post files: {len(posts)}")
     for filename in posts:
         meta, body = parse(filename)
-        if meta.get("email") is not True:
-            print(f"Skipping {filename}: email is not true")
+        if meta.get("email") is False:
+            print(f"Skipping {filename}: email is false")
             continue
         today = dt.datetime.now(dt.timezone.utc).date()
         date = dt.date.fromisoformat(Path(filename).name[:10])
         if abs((today - date).days) > 2:
             print(f"Skipping {filename}: post date not within 2 days of today")
             continue
-        title, subtitle = meta.get("title"), meta.get("subtitle")
+        title = meta.get("title")
+        subtitle = meta.get("subtitle") or meta.get("description") or title
         if not isinstance(title, str) or not title.strip():
             raise ValueError(f"{filename}: title is required")
         if not isinstance(subtitle, str) or not subtitle.strip():
@@ -60,7 +61,8 @@ def main():
         if not api_key:
             raise ValueError("KIT_API_KEY secret is missing")
         slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", Path(filename).stem)
-        link = f"https://learningfreelance.com/{slug}/"
+        permalink = meta.get("permalink") or f"/{slug}/"
+        link = f"https://learningfreelance.com/{permalink.lstrip('/')}"
         # Email clients do not reliably support HTML <details> dropdowns.
         # Keep them on the website, but replace each with a link in Kit emails.
         body = re.sub(
