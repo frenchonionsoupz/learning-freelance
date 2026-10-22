@@ -1,5 +1,6 @@
 ---
 layout: post
+permalink: /show/
 title: "My New Show-and-Tell Experiment"
 description: "Turning the work I already do into things worth writing about, with a weekly ChatGPT recap."
 date: 2026-10-22 10:25:00 -0400
