@@ -31,7 +31,7 @@ Keep specifics and avoid generic productivity advice. This digest is for turning
 
 </details>
 
-<img src="/assets/weekly-work-to-content-task.jpg" alt="ChatGPT Scheduled Tasks screen showing the active Weekly Work-to-Content Recap task" style="display:block;max-width:591px;width:100%;height:auto;margin:1.5rem auto;" />
+<img src="https://raw.githubusercontent.com/frenchonionsoupz/learning-freelance/main/assets/weekly-work-to-content-task.jpg?version=2" alt="ChatGPT Scheduled Tasks screen showing the active Weekly Work-to-Content Recap task" style="display:block;max-width:591px;width:100%;height:auto;margin:1.5rem auto;" />
 
 I also turned on email notifications for ChatGPT tasks, so I'll get a reminder when the weekly recap is ready.
 
