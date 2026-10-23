@@ -1,0 +1,73 @@
+---
+layout: default
+title: Build Your Freelance Field Journal
+description: A free, customizable reflection practice for freelancers. Copy the template, check in weekly, and optionally use AI to spot patterns.
+permalink: /field-journal/
+---
+<style>
+.fj-page{padding-top:12px}.fj-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.13em;font-weight:700;color:var(--accent);margin-bottom:12px}.fj-page h1{font-size:clamp(32px,6vw,46px);line-height:1.12;letter-spacing:-.035em;margin:0 0 16px}.fj-lead{font-size:18px;line-height:1.65;color:#465249;margin-bottom:34px}.fj-page h2{font-size:26px;line-height:1.3;margin:38px 0 19px}.fj-steps{counter-reset:journal;list-style:none;padding:0;margin:0}.fj-steps li{counter-increment:journal;position:relative;padding:0 0 25px 48px;border-left:1px solid #dce4d6;margin-left:15px}.fj-steps li:last-child{border-color:transparent}.fj-steps li:before{content:counter(journal);position:absolute;left:-16px;top:0;background:#e7efe0;color:#315b36;border-radius:50%;width:31px;height:31px;display:grid;place-items:center;font-weight:700;font-size:14px}.fj-steps strong{display:block;font-size:18px;margin-bottom:4px}.fj-steps p{margin:0}.fj-prompt{border:1px solid #cddcc7;border-radius:12px;background:#f1f5ed;overflow:hidden;margin-top:18px}.fj-prompt-head{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:15px 18px;border-bottom:1px solid #d4e0ce}.fj-prompt-head strong{font-size:15px}.fj-copy{background:#315b36;border-color:#315b36;color:white;padding:9px 14px;font-size:14px;font-weight:700;white-space:nowrap}.fj-copy:hover{background:#244428;border-color:#244428}.fj-prompt pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:20px;margin:0;font:14px/1.75 "Cabin",sans-serif;color:#26372a;background:transparent}.fj-note{font-size:14px;color:var(--muted);margin-top:13px}.fj-page footer{margin-top:46px}@media(max-width:520px){.fj-prompt-head{align-items:flex-start}.fj-prompt pre{padding:15px}.fj-steps li{padding-left:40px}}
+</style>
+<article class="fj-page">
+<p class="fj-eyebrow">Free template · Make it your own</p>
+<h1>Build Your Freelance Field Journal</h1>
+<p class="fj-lead">A simple reflection practice for building a freelance business that actually fits you. One Google Doc, a few questions, and a little time each week. No app, account, or complicated setup required.</p>
+<h2>Start in five minutes</h2>
+<ol class="fj-steps">
+<li><strong>Get the template.</strong><p><a href="https://docs.google.com/document/d/1RA-3JEiVWE9c3vLfeWnNhDjpKymTktrv7JYKCrBZoo8/edit" target="_blank" rel="noopener noreferrer">Open the Freelance Field Journal ↗</a>. Choose <b>File → Make a copy</b> to save it in your own Google Drive.</p></li>
+<li><strong>Answer the opening questions.</strong><p>The three sections—Know Thyself, Know Thy Work, Know Thy Market—give you a starting point. Be honest. Don't try to sound impressive.</p></li>
+<li><strong>Return to it each week.</strong><p><b>Sunday:</b> set one meaningful intention and a not-to-do list. <b>Friday:</b> capture wins, energy-giving moments, time-wasters, and frustrations. <b>At the end of each month:</b> look for recurring patterns. Add each new entry below the previous ones so you can look back.</p></li>
+<li><strong>Optional: reflect with AI.</strong><p>Paste the companion prompt below into an AI assistant, along with your latest entry or journal excerpts. If your assistant has permission to read your Google Doc, you can ask it to use the document directly. Merely sharing a URL won't work in every assistant.</p></li>
+<li><strong>Change the system.</strong><p>Delete questions. Write new ones. Use paper instead. The goal isn't to follow my system faithfully; it's to build a reflection practice that helps <em>you</em> work more intentionally.</p></li>
+</ol>
+<h2>AI Companion Prompt</h2>
+<p>If you want a little help noticing patterns in your reflections, copy this entire prompt into the AI assistant of your choice.</p>
+<div class="fj-prompt">
+<div class="fj-prompt-head"><strong>Copy-and-paste companion prompt</strong><button type="button" id="fj-copy" class="fj-copy" aria-label="Copy entire AI companion prompt">Copy prompt</button></div>
+<pre id="fj-prompt-text">You are my reflection partner for the Freelance Field Journal.
+
+Your job is to be an intentional mirror, not a guru, boss, therapist, or business-growth coach. I want to build a freelance business shaped by who I am, what I do best, what matters to me, and what people genuinely need.
+
+Use only the dated journal entries I share or explicitly grant you access to. Ask one useful follow-up question at a time. Reflect my own words back to me and help me notice patterns, tensions, energizing work, draining work, and emerging possibilities.
+
+When I ask for a monthly review, give me:
+1. Recurring energizers and frustrations
+2. Patterns in clients, projects, work, and leads
+3. Any tensions or contradictions worth examining
+4. Three possible experiments for the next month
+5. The dated entries or exact words supporting each observation
+
+Label interpretations as hypotheses, not facts. Don't invent evidence. Don't prescribe a generic formula for success. Don't assume I want more revenue, clients, or growth unless I say so. Don't rewrite or delete my original reflections unless I explicitly request it.
+
+Begin by asking whether I'd like to complete the onboarding, do a Sunday or Friday reflection, or review past entries.</pre>
+</div>
+<p class="fj-note" id="fj-copy-status" role="status" aria-live="polite">You control what you share with AI. You can use the journal entirely without it.</p>
+<footer>© {{ site.time | date: "%Y" }} Learning Freelance · <a href="{{ '/' | relative_url }}">Home</a></footer>
+</article>
+<script>
+(function(){
+  var btn=document.getElementById('fj-copy');
+  var el=document.getElementById('fj-prompt-text');
+  var status=document.getElementById('fj-copy-status');
+  btn.addEventListener('click',async function(){
+    var value=el.textContent;
+    try{
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(value);
+      }else{
+        var field=document.createElement('textarea');
+        field.value=value;field.style.position='fixed';field.style.opacity='0';
+        document.body.appendChild(field);field.select();
+        if(!document.execCommand('copy')) throw new Error('Copy failed');
+        field.remove();
+      }
+      btn.textContent='Copied ✓';
+      status.textContent='Full prompt copied. Paste it into your AI assistant.';
+    }catch(err){
+      btn.textContent='Select prompt';
+      var range=document.createRange();range.selectNodeContents(el);
+      var selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
+      status.textContent='Prompt selected. Press Ctrl+C (or Cmd+C) to copy.';
+    }
+  });
+})();
+</script>
