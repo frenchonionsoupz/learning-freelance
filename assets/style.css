@@ -46,7 +46,7 @@
     .brand .dot { color: var(--text); }
 
     main {
-      padding-bottom: 90px;
+      padding-bottom: 36px;
     }
 
     .intro {
@@ -74,7 +74,7 @@
     }
 
     .subscribe-box {
-      margin: 0 0 46px;
+      margin: 0 0 22px;
       padding: 18px 18px 16px;
       background: var(--accent-soft);
       border: 1px solid #d7e1cf;
@@ -186,7 +186,8 @@
 
     footer {
       padding-top: 20px;
-      margin-top: 42px;
+      margin-top: 0;
+      padding-bottom: 35px;
       font: 13px/1.6 var(--sans);
       color: var(--muted);
     }
