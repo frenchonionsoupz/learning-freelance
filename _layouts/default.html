@@ -18,6 +18,7 @@
       <a href="{{ '/' | relative_url }}" class="brand" aria-label="Learning Freelance home">learning<span class="accent">freelance</span><span class="dot">.</span></a>
     </header>
     <main>{{ content }}</main>
+    {% unless page.url == "/" %}
     <section class="subscribe-box" aria-labelledby="subscribe-heading">
       <p class="subscribe-label" id="subscribe-heading">Get new posts by email</p>
       <p class="subscribe-copy">New writing, most days.</p>
@@ -25,6 +26,7 @@
         <script async data-uid="ab42a40fe0" src="https://learning-freelance.kit.com/ab42a40fe0/index.js"></script>
       </div>
     </section>
+    {% endunless %}
     <footer>© {{ site.time | date: "%Y" }} Learning Freelance · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></footer>
   </div>
 </body>
